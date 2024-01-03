@@ -1,30 +1,42 @@
 {
-  "name": "project",
+  "name": "zakrivayuschiy-teg",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo 'Привет!'",
-    "check": "prettier --check './src/**/*.{html,css,js}'",
-    "format": "prettier --write './src/**/*.{html,css,js}'",
-    "lint": "stylelint './src/**/*.css'",
-    "lintfix": "stylelint './src/**/*.css' --fix",
+    "test": "echo 'Hello!'",
+    "check": "prettier --check ./src/**/*.{html,scss,js}",
+    "format": "prettier --write ./src/**/*.{html,scss,js}",
+    "lint": "stylelint ./src/**/*.scss",
+    "lintfix": "stylelint ./src/**/*.scss --fix",
     "checkAll": "npm run check && npm run lint",
     "fixAll": "npm run format && npm run lintfix",
     "build": "gulp build",
     "dev": "gulp",
-    "fixAndBuild": "npm run fixAll && npm run build",
-    "lintfixAndPush": "npm run fixAll && git add . && git commit -m 'подготовили к публикации' && git push"
+    "lfa": "npm run fixAll && git add ."
   },
-  "author": "",
+  "author": "https://github.com/deadplut",
   "license": "ISC",
   "devDependencies": {
-    "browser-sync": "^2.29.1",
+    "autoprefixer": "^10.4.15",
+    "browser-sync": "^2.29.3",
+    "cssnano": "^6.0.1",
     "del": "^6.0.0",
     "gulp": "^4.0.2",
     "gulp-concat-css": "^3.1.0",
+    "gulp-minify": "^3.1.0",
     "gulp-plumber": "^1.2.1",
-    "prettier": "^2.8.7",
-    "stylelint": "^15.4.0"
-  }
+    "gulp-postcss": "^9.0.1",
+    "gulp-sass": "^5.1.0",
+    "html-minifier": "^4.0.0",
+    "postcss": "^8.4.28",
+    "postcss-combine-media-query": "^1.0.1",
+    "prettier": "^3.0.2",
+    "sass": "^1.66.1",
+    "stylelint": "^15.10.3",
+    "stylelint-config-standard-scss": "^11.0.0"
+  },
+  "browserslist": [
+    "last 5 versions"
+  ]
 }
