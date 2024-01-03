@@ -6,3 +6,47 @@
 */
 
 @import 'src/styles/variables';
+
+:root.theme-light {
+  // font-weight
+  --main-font-weight: 400;
+  --main-font-bold-weight: 700;
+
+  // theme-colors
+  --theme-bc-color: white;
+  --theme-accent-color: black;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    // font-weight
+    --main-font-weight: 400;
+    --main-font-bold-weight: 700;
+
+    // theme-colors
+    --theme-bc-color: white;
+    --theme-accent-color: black;
+  }
+}
+
+:root.theme-dark {
+  // font-weight
+  --main-font-weight: 465;
+  --main-font-bold-weight: 785;
+
+  // theme-colors
+  --theme-bc-color: black;
+  --theme-accent-color: #00cc14;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    // font-weight
+    --main-font-weight: 465;
+    --main-font-bold-weight: 785;
+
+    // theme-colors
+    --theme-bc-color: black;
+    --theme-accent-color: #00cc14;
+  }
+}

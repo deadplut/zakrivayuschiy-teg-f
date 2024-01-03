@@ -37,7 +37,7 @@ function scss() {
   const plugins = [
     autoprefixer(),
     media_query(),
-    cssnano()
+    // cssnano()
   ];
   return gulp.src('src/styles/**/*.scss')
     .pipe(sass())
