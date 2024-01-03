@@ -43,7 +43,7 @@ function scss() {
     .pipe(sass())
     .pipe(concat('bundle.css'))
     .pipe(postcss(plugins))
-    .pipe(gulp.dest('dist/'))
+    .pipe(gulp.dest('dist/styles/'))
     .pipe(browserSync.reload({ stream: true }))
 }
 

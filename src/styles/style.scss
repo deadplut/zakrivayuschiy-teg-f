@@ -18,8 +18,11 @@
 @import 'src/styles/globals';
 @import 'src/styles/variables';
 @import 'src/styles/themes';
+@import 'fonts';
 
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-family: var(--main-font) sans-serif;
+  font-variation-settings: 'wght' var(--main-text-weight);
 }
