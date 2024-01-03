@@ -14,10 +14,10 @@
 
 */
 
-@import "src/styles/animations.scss";
-@import "src/styles/globals.scss";
-@import "src/styles/variables.scss";
-@import "src/styles/themes.scss";
+@import 'src/styles/animations';
+@import 'src/styles/globals';
+@import 'src/styles/variables';
+@import 'src/styles/themes';
 
 .page {
   min-inline-size: 320px;
