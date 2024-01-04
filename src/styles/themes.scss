@@ -15,6 +15,9 @@
   // theme-colors
   --theme-bc-color: white;
   --theme-accent-color: black;
+
+  // gradient
+  --bg-image-gradient: var(--gradient-background-light-theme);
 }
 
 @media (prefers-color-scheme: light) {
@@ -26,6 +29,9 @@
     // theme-colors
     --theme-bc-color: white;
     --theme-accent-color: black;
+
+    // gradient
+    --bg-image-gradient: var(--gradient-background-light-theme);
   }
 }
 
@@ -37,6 +43,9 @@
   // theme-colors
   --theme-bc-color: black;
   --theme-accent-color: #00cc14;
+
+  // gradient
+  --bg-image-gradient: var(--gradient-background-dark-theme);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -48,5 +57,8 @@
     // theme-colors
     --theme-bc-color: black;
     --theme-accent-color: #00cc14;
+
+    // gradient
+    --bg-image-gradient: var(--gradient-background-dark-theme);
   }
 }

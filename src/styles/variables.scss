@@ -13,4 +13,59 @@
   // theme-colors
   --theme-bc-color: white;
   --theme-accent-color: black;
+
+  // gradient-colors
+  --color-beige: #d3d3d3;
+  --color-beige-op-0: #d3d3d300;
+  --color-dark: #000;
+  --color-dark-op-0: #0000;
+  --color-beige-light: #e7e7e7;
+  --color-dark-grey: #1a1a1a;
+  --color-toxic-green: #007f0c;
+  --color-dark-green: #004306;
+
+  // gradient
+  --rep-gradient-to-bottom-light: repeating-linear-gradient(
+    to bottom,
+    var(--color-beige, #d3d3d3),
+    var(--color-beige, #d3d3d3) 2px,
+    var(--color-beige-op-0, #d3d3d300) 2px,
+    var(--color-beige-op-0, #d3d3d300) 4px
+  );
+  --rep-gradient-to-bottom-dark: repeating-linear-gradient(
+    to bottom,
+    var(--color-dark, #000),
+    var(--color-dark-op-0, #0000) 2px,
+    var(--color-beige-op-0, #d3d3d300) 2px,
+    var(--color-beige-op-0, #d3d3d300) 4px
+  );
+  --rep-gradient-to-right-light: repeating-linear-gradient(
+    to right,
+    var(--color-beige, #d3d3d3),
+    var(--color-beige, #d3d3d3) 2px,
+    var(--color-beige-op-0, #d3d3d300) 2px,
+    var(--color-beige-op-0, #d3d3d300) 4px
+  );
+  --rep-gradient-to-right-dark: repeating-linear-gradient(
+    to right,
+    var(--color-dark, #000),
+    var(--color-dark-op-0, #0000) 2px,
+    var(--color-beige-op-0, #d3d3d300) 2px,
+    var(--color-beige-op-0, #d3d3d300) 4px
+  );
+  --linear-gradient-light: linear-gradient(
+    to bottom,
+    var(--color-beige-light, #e7e7e7) 0.01%,
+    var(--color-dark-grey, #1a1a1a)
+  );
+  --linear-gradient-dark: linear-gradient(
+    to bottom,
+    var(--color-toxic-green, #007f0c),
+    var(--color-dark-green, #004306)
+  );
+  --gradient-background-light-theme: var(--rep-gradient-to-bottom-light),
+    var(--rep-gradient-to-right-light), var(--linear-gradient-light);
+  --gradient-background-dark-theme: var(--rep-gradient-to-bottom-dark),
+    var(--rep-gradient-to-right-dark), var(--linear-gradient-dark);
+  --bg-image-gradient: var(--gradient-background-light-theme);
 }
