@@ -13,11 +13,14 @@
   --main-font-bold-weight: 700;
 
   // theme-colors
-  --theme-bc-color: white;
-  --theme-accent-color: black;
+  --theme-bc-color: var(--light-theme-bc-color, white);
+  --theme-accent-color: var(--light-theme-accent-color, black);
 
   // gradient
   --bg-image-gradient: var(--gradient-background-light-theme);
+
+  // button-color
+  --button-disabled-color: var(--light-theme-accent-color-op-60, rgba(0, 0, 0, 0.6))
 }
 
 @media (prefers-color-scheme: light) {
@@ -27,11 +30,14 @@
     --main-font-bold-weight: 700;
 
     // theme-colors
-    --theme-bc-color: white;
-    --theme-accent-color: black;
+  --theme-bc-color: var(--light-theme-bc-color, white);
+  --theme-accent-color: var(--light-theme-accent-color, black);
 
     // gradient
     --bg-image-gradient: var(--gradient-background-light-theme);
+
+    // button-color
+    --button-disabled-color: var(--light-theme-accent-color-op-60, rgba(0, 0, 0, 0.6))
   }
 }
 
@@ -41,11 +47,14 @@
   --main-font-bold-weight: 785;
 
   // theme-colors
-  --theme-bc-color: black;
-  --theme-accent-color: #00cc14;
+  --theme-bc-color: var(--dark-theme-bc-color, black);
+  --theme-accent-color: var(--dark-theme-accent-color, #00cc14);
 
   // gradient
   --bg-image-gradient: var(--gradient-background-dark-theme);
+
+  // button-color
+  --button-disabled-color: var(--dark-theme-accent-color-op-60, rgba(0, 204, 20, 0.6))
 }
 
 @media (prefers-color-scheme: dark) {
@@ -55,10 +64,13 @@
     --main-font-bold-weight: 785;
 
     // theme-colors
-    --theme-bc-color: black;
-    --theme-accent-color: #00cc14;
+    --theme-bc-color: var(--dark-theme-bc-color, black);
+    --theme-accent-color: var(--dark-theme-accent-color, #00cc14);
 
     // gradient
     --bg-image-gradient: var(--gradient-background-dark-theme);
+
+    // button-color
+    --button-disabled-color: var(--dark-theme-accent-color-op-60, rgba(0, 204, 20, 0.6))
   }
 }

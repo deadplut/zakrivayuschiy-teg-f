@@ -21,7 +21,8 @@ h6,
 p,
 ul,
 ol,
-li {
+li,
+button {
   margin: 0;
   padding: 0;
 }
@@ -50,4 +51,10 @@ ol {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
   white-space: nowrap;
+}
+
+button {
+  background-color: inherit;
+  border: none;
+
 }
