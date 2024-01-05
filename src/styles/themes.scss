@@ -5,12 +5,12 @@
 ✦ не забудьте описать стили для изменения темы через медизапрос пользовательских предпочтений
 */
 
-@import 'src/styles/variables';
+@import "src/styles/variables";
 
 :root.theme-light {
   // font-weight
-  --main-font-weight: 400;
-  --main-font-bold-weight: 700;
+  --main-text-weight: var(--main-font-weight-400);
+  --title-text-weight: var(--main-font-bold-weight-700);
 
   // theme-colors
   --theme-bc-color: var(--light-theme-bc-color, white);
@@ -20,31 +20,37 @@
   --bg-image-gradient: var(--gradient-background-light-theme);
 
   // button-color
-  --button-disabled-color: var(--light-theme-accent-color-op-60, rgba(0, 0, 0, 0.6))
+  --button-disabled-color: var(
+    --light-theme-accent-color-op-60,
+    rgb(0 0 0 / 60%)
+  );
 }
 
 @media (prefers-color-scheme: light) {
   :root {
     // font-weight
-    --main-font-weight: 400;
-    --main-font-bold-weight: 700;
+    --main-text-weight: var(--main-font-weight-400);
+    --title-text-weight: var(--main-font-bold-weight-700);
 
     // theme-colors
-  --theme-bc-color: var(--light-theme-bc-color, white);
-  --theme-accent-color: var(--light-theme-accent-color, black);
+    --theme-bc-color: var(--light-theme-bc-color, white);
+    --theme-accent-color: var(--light-theme-accent-color, black);
 
     // gradient
     --bg-image-gradient: var(--gradient-background-light-theme);
 
     // button-color
-    --button-disabled-color: var(--light-theme-accent-color-op-60, rgba(0, 0, 0, 0.6))
+    --button-disabled-color: var(
+      --light-theme-accent-color-op-60,
+      rgb(0 0 0 / 60%)
+    );
   }
 }
 
 :root.theme-dark {
   // font-weight
-  --main-font-weight: 465;
-  --main-font-bold-weight: 785;
+  --main-text-weight: var(--main-font-weight-465);
+  --title-text-weight: var(--main-font-bold-weight-785);
 
   // theme-colors
   --theme-bc-color: var(--dark-theme-bc-color, black);
@@ -54,14 +60,17 @@
   --bg-image-gradient: var(--gradient-background-dark-theme);
 
   // button-color
-  --button-disabled-color: var(--dark-theme-accent-color-op-60, rgba(0, 204, 20, 0.6))
+  --button-disabled-color: var(
+    --dark-theme-accent-color-op-60,
+    rgb(0 204 20 / 60%)
+  );
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     // font-weight
-    --main-font-weight: 465;
-    --main-font-bold-weight: 785;
+    --main-text-weight: var(--main-font-weight-465);
+    --title-text-weight: var(--main-font-bold-weight-785);
 
     // theme-colors
     --theme-bc-color: var(--dark-theme-bc-color, black);
@@ -71,6 +80,9 @@
     --bg-image-gradient: var(--gradient-background-dark-theme);
 
     // button-color
-    --button-disabled-color: var(--dark-theme-accent-color-op-60, rgba(0, 204, 20, 0.6))
+    --button-disabled-color: var(
+      --dark-theme-accent-color-op-60,
+      rgb(0 204 20 / 60%)
+    );
   }
 }

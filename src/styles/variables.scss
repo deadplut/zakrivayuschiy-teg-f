@@ -1,25 +1,29 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 :root {
   // fonts
-  --main-font: 'Inter-Variable';
-  --accent-font: 'PressStart2P';
+  --main-font: "Inter-Variable";
+  --accent-font: "PressStart2P";
+  --title-line-height: 21.78px;
+  --text-line-height: 21.78px;
+  --text-font-size: 18px;
+  --button-font-size: 14px;
+  --button-line-height: 12.6px;
 
   // weights
-  --main-font-weight: 400;
-  --main-font-bold-weight: 700;
-  --main-text-weight: var(--main-font-weight);
-  --title-text-weight: var(--main-font-bold-weight);
+  --main-font-weight-400: 400;
+  --main-font-bold-weight-700: 700;
+  --main-font-weight-465: 465;
+  --main-font-bold-weight-785: 785;
+  --main-text-weight: var(--main-font-weight-400);
+  --title-text-weight: var(--main-font-bold-weight-700);
 
   // theme-colors
   --light-theme-bc-color: white;
   --light-theme-accent-color: black;
-  --light-theme-accent-color-op-60: rgba(0, 0, 0, 0.6);
-
+  --light-theme-accent-color-op-60: rgb(0 0 0 / 60%);
   --dark-theme-bc-color: black;
   --dark-theme-accent-color: #00cc14;
-  --dark-theme-accent-color-op-60: rgba(0, 204, 20, 0.6);
-
-
+  --dark-theme-accent-color-op-60: rgb(0 204 20 / 60%);
   --theme-bc-color: var(--light-theme-bc-color, white);
   --theme-accent-color: var(--light-theme-accent-color, black);
 
@@ -41,7 +45,6 @@
     var(--color-beige-op-0, #d3d3d300) 2px,
     var(--color-beige-op-0, #d3d3d300) 4px
   );
-
   --rep-gradient-to-bottom-dark: repeating-linear-gradient(
     to bottom,
     var(--color-dark, #000),
@@ -49,7 +52,6 @@
     var(--color-beige-op-0, #d3d3d300) 2px,
     var(--color-beige-op-0, #d3d3d300) 4px
   );
-
   --rep-gradient-to-right-light: repeating-linear-gradient(
     to right,
     var(--color-beige, #d3d3d3),
@@ -57,7 +59,6 @@
     var(--color-beige-op-0, #d3d3d300) 2px,
     var(--color-beige-op-0, #d3d3d300) 4px
   );
-
   --rep-gradient-to-right-dark: repeating-linear-gradient(
     to right,
     var(--color-dark, #000),
@@ -65,28 +66,23 @@
     var(--color-beige-op-0, #d3d3d300) 2px,
     var(--color-beige-op-0, #d3d3d300) 4px
   );
-
   --linear-gradient-light: linear-gradient(
     to bottom,
     var(--color-beige-light, #e7e7e7) 0.01%,
     var(--color-dark-grey, #1a1a1a)
   );
-
   --linear-gradient-dark: linear-gradient(
     to bottom,
     var(--color-toxic-green, #007f0c),
     var(--color-dark-green, #004306)
   );
-
   --gradient-background-light-theme: var(--rep-gradient-to-bottom-light),
     var(--rep-gradient-to-right-light), var(--linear-gradient-light);
   --gradient-background-dark-theme: var(--rep-gradient-to-bottom-dark),
     var(--rep-gradient-to-right-dark), var(--linear-gradient-dark);
   --bg-image-gradient: var(--gradient-background-light-theme);
 
-  //widths:
+  // widths:
   --desktop-container-width: clamp(23.438rem, 0.223rem + 48.363vw, 43.75rem);
-  --mobile-container-width: 100%
-
-
+  --mobile-container-width: 100%;
 }
