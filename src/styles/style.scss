@@ -367,3 +367,38 @@
   width: 21px;
   height: 21px;
 }
+
+.dialog {
+  padding: 30px;
+  width: 353px;
+  height: 191px;
+  background-color: var(--theme-bc-color);
+  color: var(--theme-accent-color);
+  font-family: var(--accent-font);
+  line-height: 21px;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.dialog[open] {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.dialog::backdrop {
+  background-color: rgb(0 0 0 / 75%);
+}
+
+.close-button {
+  padding: 12.5px 132.5px;
+  line-height: 12.6px;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.dialog__floopy__icon {
+  display: block;
+  width: 39px;
+  height: 39px;
+}
