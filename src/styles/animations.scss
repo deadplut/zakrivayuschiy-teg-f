@@ -14,3 +14,13 @@
 */
 
 @import "src/styles/variables";
+
+@keyframes arrow-moving {
+  0% {
+    translate: none;
+  }
+
+  100% {
+    translate: 4px 0;
+  }
+}

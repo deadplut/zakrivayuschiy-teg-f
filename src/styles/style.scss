@@ -76,16 +76,51 @@
   padding-left: 20px;
 }
 
-.theme-menu__button:disabled {
-  position: relative;
-  color: var(--button-disabled-color);
-}
-
 .theme-menu__button:disabled::before {
   position: absolute;
   color: var(--button-disabled-color);
   content: "▶";
   left: -20px;
+  animation-name: arrow-moving;
+  animation-iteration-count: infinite;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate;
+}
+
+.theme-menu__button {
+  position: relative;
+  transition: color 0.3s ease;
+
+  &:hover,
+  &:focus {
+    transition: color 0.3s ease;
+    color: var(--button-disabled-color);
+  }
+
+  &:disabled {
+    transition: color 0.3s;
+    color: var(--button-disabled-color);
+    pointer-events: none;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 2px;
+    background-color: var(--button-disabled-color);
+    width: 100%;
+    transform: scaleX(0);
+    transition: transform 0.3s;
+    transform-origin: left;
+  }
+
+  &:focus-visible::after {
+    transform: scaleX(1);
+    transition: transform 0.3s;
+    transform-origin: left;
+  }
 }
 
 // cards
@@ -103,14 +138,13 @@
       padding: 3px 24px 3px 10px;
     }
 
-
-    & .card__image-wrapper{
+    & .card__image-wrapper {
       position: relative;
       width: 100%;
     }
 
-
     & .card__image {
+      width: inherit;
       outline: 2px solid var(--theme-accent-color);
     }
 
@@ -125,10 +159,13 @@
       color: var(--theme-accent-color);
       mix-blend-mode: hard-light;
       text-shadow: 1px var(--theme-bc-color);
-      opacity: 50%;
+      opacity: 0.5;
     }
 
-    @supports((text-stroke: 1px var(--theme-bc-color)) or (-webkit-text-stroke: 1px var(--theme-bc-color))) {
+    @supports (
+      (text-stroke: 1px var(--theme-bc-color)) or
+        (-webkit-text-stroke: 1px var(--theme-bc-color))
+    ) {
       & .card__image-wrapper-text {
         -webkit-text-stroke: 1px var(--theme-bc-color);
         text-stroke: 1px var(--theme-bc-color);
@@ -159,8 +196,6 @@
     }
   }
 }
-
-
 
 @media (width <= 375px) {
   .cards {

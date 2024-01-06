@@ -57,3 +57,8 @@ button {
   background-color: inherit;
   border: none;
 }
+
+:focus,
+:focus-visible {
+  outline: none;
+}
