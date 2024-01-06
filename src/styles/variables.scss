@@ -26,6 +26,11 @@
   --dark-theme-accent-color-op-60: rgb(0 204 20 / 60%);
   --theme-bc-color: var(--light-theme-bc-color, white);
   --theme-accent-color: var(--light-theme-accent-color, black);
+  --theme-button-color: var(--light-theme-bc-color);
+
+  // heart-colors
+  --contour-color: var(--theme-accent-color);
+  --main-body: rgb(255 0 0 / 100%);
 
   // gradient-colors
   --color-beige: #d3d3d3;

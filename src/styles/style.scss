@@ -191,8 +191,18 @@
       gap: 12px;
     }
 
-    & .card__button-like {
+    & .card__like-button {
       padding: 12.5px 37px;
+    }
+
+    & .card__icon-like {
+      border: 2px solid var(--theme-bc-color);
+      transition: border 0.3s ease;
+    }
+
+    & .card__icon-like:focus-visible {
+      border: 2px solid var(--theme-accent-color);
+      transition: border 0.3s ease;
     }
   }
 }
@@ -208,13 +218,137 @@
 }
 
 .standard-button {
+  position: relative;
   font-family: var(--accent-font), sans-serif;
   border: 2px solid var(--theme-accent-color);
   font-size: var(--button-font-size);
   line-height: var(--button-line-height);
   font-weight: var(--main-font-weight-400);
+  transition: box-shadow 0.3s ease;
+
+  &:focus {
+    box-shadow: 2px 2px var(--theme-accent-color);
+    transition: box-shadow 0.3s ease;
+  }
+
+  &::before {
+    top: 0;
+    left: 0;
+    content: "";
+    display: block;
+    position: absolute;
+    height: 100%;
+    background-color: var(--theme-accent-color);
+    width: 100%;
+    transform: scaleX(0);
+    transition: transform 0.3s 0.5s ease-in-out;
+    transform-origin: left;
+    z-index: 1;
+  }
+
+  &:hover::before {
+    transform: scaleX(1);
+    transition: transform 0.5s ease-in-out;
+    transform-origin: left;
+    z-index: 1;
+  }
+
+  & .button__text {
+    position: relative;
+    display: block;
+    z-index: 2;
+    color: var(--theme-button-color);
+    mix-blend-mode: difference;
+  }
+
+  & .footer__save-button__icon {
+    position: relative;
+    z-index: 2;
+    color: var(--theme-button-color);
+    mix-blend-mode: difference;
+  }
 }
 
+// heart
+.like-icon {
+  & .contour {
+    fill: var(--contour-color);
+    transition: fill 0.1s linear;
+  }
+
+  & .core {
+    fill: var(--theme-bc-color);
+    transition: fill 0.3s;
+    transition-delay: 0.03s;
+  }
+
+  &:hover .core {
+    fill: var(--contour-color);
+    transition: fill 0.3s;
+  }
+
+  &:hover .main-body {
+    fill: var(--contour-color);
+    transition: fill 0.3s;
+    transition-delay: 0.05s;
+  }
+
+  & .main-body {
+    fill: var(--theme-bc-color);
+    transition: fill 0.3s;
+  }
+
+  &:active .core {
+    fill: var(--main-body);
+    transition: fill 0.3s;
+  }
+
+  &:active .main-body {
+    fill: var(--main-body);
+    transition: fill 0.3s;
+    transition-delay: 0.05s;
+  }
+
+  & .sparks {
+    fill: var(--main-body);
+    opacity: 0;
+  }
+}
+
+.like-icon.is-liked {
+  & .contour {
+    fill: var(--main-body);
+    transition: fill 0.3s;
+    transition-delay: 0.06s;
+  }
+
+  & .core {
+    fill: var(--main-body);
+    transition: fill 0.3s;
+  }
+
+  & .main-body {
+    fill: var(--main-body);
+    transition: fill 0.3s;
+    transition-delay: 0.05s;
+  }
+
+  & .heart {
+    animation-name: heart-scaling;
+    animation-delay: 0.1s;
+    animation-duration: 0.3s;
+    animation-timing-function: ease-in;
+  }
+
+  & .sparks {
+    animation-name: sparks-apearing;
+    animation-delay: 0.3s;
+    animation-duration: 0.3s;
+    animation-timing-function: ease-in-out;
+  }
+}
+
+// footer
 .footer__save-button {
   inline-size: 335px;
   height: 55px;

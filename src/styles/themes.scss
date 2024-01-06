@@ -15,6 +15,7 @@
   // theme-colors
   --theme-bc-color: var(--light-theme-bc-color, white);
   --theme-accent-color: var(--light-theme-accent-color, black);
+  --theme-button-color: var(--light-theme-bc-color);
 
   // gradient
   --bg-image-gradient: var(--gradient-background-light-theme);
@@ -35,6 +36,7 @@
     // theme-colors
     --theme-bc-color: var(--light-theme-bc-color, white);
     --theme-accent-color: var(--light-theme-accent-color, black);
+    --theme-button-color: var(--light-theme-bc-color);
 
     // gradient
     --bg-image-gradient: var(--gradient-background-light-theme);
@@ -55,6 +57,7 @@
   // theme-colors
   --theme-bc-color: var(--dark-theme-bc-color, black);
   --theme-accent-color: var(--dark-theme-accent-color, #00cc14);
+  --theme-button-color: var(--dark-theme-accent-color);
 
   // gradient
   --bg-image-gradient: var(--gradient-background-dark-theme);
@@ -75,6 +78,7 @@
     // theme-colors
     --theme-bc-color: var(--dark-theme-bc-color, black);
     --theme-accent-color: var(--dark-theme-accent-color, #00cc14);
+    --theme-button-color: var(--dark-theme-accent-color);
 
     // gradient
     --bg-image-gradient: var(--gradient-background-dark-theme);

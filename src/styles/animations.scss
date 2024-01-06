@@ -24,3 +24,23 @@
     translate: 4px 0;
   }
 }
+
+@keyframes heart-scaling {
+  0% {
+    scale: 1;
+  }
+
+  100% {
+    scale: 1.5;
+  }
+}
+
+@keyframes sparks-apearing {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
