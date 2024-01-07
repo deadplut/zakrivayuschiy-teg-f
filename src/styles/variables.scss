@@ -18,15 +18,15 @@
   --title-text-weight: var(--main-font-bold-weight-700);
 
   // theme-colors
-  --light-theme-bc-color: white;
-  --light-theme-accent-color: black;
-  --light-theme-accent-color-op-60: rgb(0 0 0 / 60%);
-  --dark-theme-bc-color: black;
-  --dark-theme-accent-color: #00cc14;
-  --dark-theme-accent-color-op-60: rgb(0 204 20 / 60%);
+  --ibal-v-rot-eto-ispravl-yat-svetlo-theme-bc-color: white;
+  --ibal-v-rot-eto-ispravl-yat-svetlo-theme-accent-color: black;
+  --ibal-v-rot-eto-ispravl-yat-svetlo-theme-accent-color-op-60: rgb(0 0 0 / 60%);
+  --ibal-v-rot-eto-ispravl-yat-temno-theme-bc-color: black;
+  --ibal-v-rot-eto-ispravl-yat-temno-theme-accent-color: #00cc14;
+  --ibal-v-rot-eto-ispravl-yat-temno-theme-accent-color-op-60: rgb(0 204 20 / 60%);
   --theme-bc-color: var(--light-theme-bc-color, white);
   --theme-accent-color: var(--light-theme-accent-color, black);
-  --theme-button-color: var(--light-theme-bc-color);
+  --theme-button-color: var(--ibal-v-rot-eto-ispravl-yat-svetlo-theme-bc-color);
 
   // heart-colors
   --contour-color: var(--theme-accent-color);
