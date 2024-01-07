@@ -20,6 +20,8 @@
 @import "src/styles/themes";
 @import "src/styles/fonts";
 
+
+
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
@@ -31,6 +33,7 @@
   color: var(--theme-accent-color);
   background: var(--bg-image-gradient), var(--theme-bc-color);
   background-size: cover;
+  background-attachment: fixed;
 }
 
 .container {
@@ -81,6 +84,7 @@
   color: var(--button-disabled-color);
   content: "▶";
   left: -20px;
+  top: 0;
   animation-name: arrow-moving;
   animation-iteration-count: infinite;
   animation-duration: 0.5s;
@@ -91,15 +95,14 @@
 .theme-menu__button {
   position: relative;
   transition: color 0.3s ease;
+  text-transform: uppercase;
 
   &:hover,
   &:focus {
-    transition: color 0.3s ease;
     color: var(--button-disabled-color);
   }
 
   &:disabled {
-    transition: color 0.3s;
     color: var(--button-disabled-color);
     pointer-events: none;
   }
@@ -107,6 +110,8 @@
   &::after {
     content: "";
     position: absolute;
+    bottom: -2px;
+    left: 0;
     display: block;
     height: 2px;
     background-color: var(--button-disabled-color);
@@ -118,7 +123,6 @@
 
   &:focus-visible::after {
     transform: scaleX(1);
-    transition: transform 0.3s;
     transform-origin: left;
   }
 }
@@ -129,12 +133,12 @@
   display: flex;
   flex-direction: column;
   gap: 50px;
-  font-family: var(--main-font);
+  font-family: var(--main-font), Arial, sans-serif;
 
   & .card {
     & .card__title {
       font-family: inherit;
-      font-weight: var(--title-text-weight);
+      font-variation-settings: "wght" var(--title-text-weight) "slnt" 0;
       font-size: var(--text-font-size);
       line-height: var(--title-line-height);
       padding: 3px 24px 3px 10px;
@@ -155,7 +159,7 @@
       top: 25px;
       right: 25px;
       font-weight: var(--main-font-weight-400);
-      font-family: var(--accent-font);
+      font-family: var(--accent-font), Arial, sans-serif;
       font-size: 14px;
       line-height: 14px;
       color: var(--theme-accent-color);
@@ -181,7 +185,7 @@
       flex-direction: column;
       gap: 27px;
       font-family: inherit;
-      font-weight: var(--main-text-weight);
+      font-variation-settings: "wght" var(--main-text-weight) "slnt" 0;
       font-size: var(--text-font-size);
       line-height: var(--text-line-height);
     }
@@ -194,7 +198,8 @@
     }
 
     & .card__like-button {
-      padding: 12.5px 37px;
+      padding: 9px 17px;
+      min-inline-size: 169px;
     }
 
     & .card__icon-like {
@@ -204,7 +209,6 @@
 
     & .card__icon-like:focus-visible {
       border: 2px solid var(--theme-accent-color);
-      transition: border 0.3s ease;
     }
   }
 }
@@ -227,10 +231,10 @@
   line-height: var(--button-line-height);
   font-weight: var(--main-font-weight-400);
   transition: box-shadow 0.3s ease;
+  color: var(--theme-accent-color);
 
   &:focus {
     box-shadow: 2px 2px var(--theme-accent-color);
-    transition: box-shadow 0.3s ease;
   }
 
   &::before {
@@ -243,14 +247,13 @@
     background-color: var(--theme-accent-color);
     width: 100%;
     transform: scaleX(0);
-    transition: transform 0.3s 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out;
     transform-origin: left;
     z-index: 1;
   }
 
   &:hover::before {
     transform: scaleX(1);
-    transition: transform 0.5s ease-in-out;
     transform-origin: left;
     z-index: 1;
   }
@@ -274,44 +277,46 @@
 // heart
 .like-icon {
   & .contour {
+    transform-origin: center;
     fill: var(--contour-color);
     transition: fill 0.1s linear;
   }
 
   & .core {
+    transform-origin: center;
     fill: var(--theme-bc-color);
-    transition: fill 0.3s;
+    transition: fill 0.3s linear;
     transition-delay: 0.03s;
   }
 
   &:hover .core {
     fill: var(--contour-color);
-    transition: fill 0.3s;
   }
 
   &:hover .main-body {
     fill: var(--contour-color);
-    transition: fill 0.3s;
     transition-delay: 0.05s;
   }
 
   & .main-body {
+    transform-origin: center;
     fill: var(--theme-bc-color);
-    transition: fill 0.3s;
+    transition: fill 0.3s linear;
   }
 
   &:active .core {
     fill: var(--main-body);
-    transition: fill 0.3s;
+    transition: fill 0.3s linear;
   }
 
   &:active .main-body {
     fill: var(--main-body);
-    transition: fill 0.3s;
+    transition: fill 0.3s linear;
     transition-delay: 0.05s;
   }
 
   & .sparks {
+    transform-origin: center;
     fill: var(--main-body);
     opacity: 0;
   }
@@ -320,33 +325,19 @@
 .like-icon.is-liked {
   & .contour {
     fill: var(--main-body);
-    transition: fill 0.3s;
+    transition: fill 0.3s linear;
     transition-delay: 0.06s;
   }
 
   & .core {
     fill: var(--main-body);
-    transition: fill 0.3s;
+    transition: fill 0.3s linear;
   }
 
   & .main-body {
     fill: var(--main-body);
-    transition: fill 0.3s;
+    transition: fill 0.3s linear;
     transition-delay: 0.05s;
-  }
-
-  & .heart {
-    animation-name: heart-scaling;
-    animation-delay: 0.1s;
-    animation-duration: 0.3s;
-    animation-timing-function: ease-in;
-  }
-
-  & .sparks {
-    animation-name: sparks-apearing;
-    animation-delay: 0.3s;
-    animation-duration: 0.3s;
-    animation-timing-function: ease-in-out;
   }
 }
 
@@ -373,10 +364,10 @@
 .dialog {
   padding: 30px;
   width: 353px;
-  height: 191px;
+
   background-color: var(--theme-bc-color);
   color: var(--theme-accent-color);
-  font-family: var(--accent-font);
+  font-family: var(--accent-font), Arial, sans-serif;
   line-height: 21px;
   font-size: 14px;
   font-weight: 400;
@@ -394,9 +385,6 @@
 
 .close-button {
   padding: 12.5px 132.5px;
-  line-height: 12.6px;
-  font-size: 14px;
-  font-weight: 400;
 }
 
 .dialog__floopy__icon {
@@ -407,32 +395,32 @@
 
 // filters
 
-.brightness {
-  filter: brightness(200%);
-}
-
-.contrast {
-  filter: contrast(20%);
-}
-
-.blur {
-  filter: blur(3.2rem);
-}
-
-.opacity {
-  filter: opacity(0.8);
-}
-
-.grayscale {
-  filter: grayscale(0.8);
-}
-.saturate {
-  filter: saturate(158%);
-}
-.multiple {
-  filter: saturate(158%) opacity(0.8) grayscale(0.8);
-}
-
-.invert {
-  filter: invert(0.7);
-}
+//.brightness {
+//  filter: brightness(200%);
+//}
+//
+//.contrast {
+//  filter: contrast(20%);
+//}
+//
+//.blur {
+//  filter: blur(3.2rem);
+//}
+//
+//.opacity {
+//  filter: opacity(0.8);
+//}
+//
+//.grayscale {
+//  filter: grayscale(0.8);
+//}
+//.saturate {
+//  filter: saturate(158%);
+//}
+//.multiple {
+//  filter: saturate(158%) opacity(0.8) grayscale(0.8);
+//}
+//
+//.invert {
+//  filter: invert(0.7);
+//}

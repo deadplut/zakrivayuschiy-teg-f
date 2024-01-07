@@ -14,6 +14,25 @@
 */
 
 
+.like-icon.is-liked {
+  & .heart {
+    transform-origin: center;
+    animation-direction: alternate;
+    animation-name: heart-scaling;
+    animation-delay: 0.1s;
+    animation-duration: 0.3s;
+    animation-timing-function: ease-in;
+  }
+
+  & .sparks {transform-origin: center;
+    animation-direction: alternate;
+    animation-name: sparks-apearing;
+    animation-delay: 0.3s;
+    animation-duration: 0.3s;
+    animation-timing-function: ease-in;
+  }
+}
+
 @keyframes arrow-moving {
   0% {
     translate: none;
