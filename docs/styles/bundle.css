@@ -1,0 +1,1250 @@
+@charset "UTF-8";
+
+/* Опишите в этом файле все keyframes для проекта и стили анимаций иконки Like.
+
+Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
+✦ theme-dark — класс тёмной темы
+✦ theme-light — класс светлой темы
+✦ like-icon — для svg-иконки анимированного сердца
+✦ card__like-button — для кнопки Like рядом с иконкой
+✦ card__icon-button — для кнопки, оборачивающей иконку
+✦ card__icon-button — для кнопки, оборачивающей иконку
+✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
+✦ button__text — для обозначения текстового элемента внутри кнопки
+
+Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
+*/
+
+.like-icon .contour {
+  -webkit-transform-origin: center;
+      -ms-transform-origin: center;
+          transform-origin: center;
+  fill: var(--contour-color);
+  -webkit-transition: fill 0.1s linear;
+  transition: fill 0.1s linear;
+}
+
+.like-icon .core {
+  -webkit-transform-origin: center;
+      -ms-transform-origin: center;
+          transform-origin: center;
+  fill: var(--theme-bc-color);
+  -webkit-transition: fill 0.3s linear;
+  transition: fill 0.3s linear;
+  -webkit-transition-delay: 0.03s;
+          transition-delay: 0.03s;
+}
+
+.like-icon:hover .core {
+  fill: var(--contour-color);
+}
+
+.like-icon:hover .main-body {
+  fill: var(--contour-color);
+  -webkit-transition-delay: 0.05s;
+          transition-delay: 0.05s;
+}
+
+.like-icon .main-body {
+  -webkit-transform-origin: center;
+      -ms-transform-origin: center;
+          transform-origin: center;
+  fill: var(--theme-bc-color);
+  -webkit-transition: fill 0.3s linear;
+  transition: fill 0.3s linear;
+}
+
+.like-icon:active .core {
+  fill: var(--main-body);
+  -webkit-transition: fill 0.3s linear;
+  transition: fill 0.3s linear;
+}
+
+.like-icon:active .main-body {
+  fill: var(--main-body);
+  -webkit-transition: fill 0.3s linear;
+  transition: fill 0.3s linear;
+  -webkit-transition-delay: 0.05s;
+          transition-delay: 0.05s;
+}
+
+.like-icon .sparks {
+  -webkit-transform-origin: center;
+      -ms-transform-origin: center;
+          transform-origin: center;
+  fill: var(--main-body);
+  opacity: 0;
+}
+
+.like-icon.is-liked .contour {
+  fill: var(--main-body);
+  -webkit-transition: fill 0.3s linear;
+  transition: fill 0.3s linear;
+  -webkit-transition-delay: 0.06s;
+          transition-delay: 0.06s;
+}
+
+.like-icon.is-liked .core {
+  fill: var(--main-body);
+  -webkit-transition: fill 0.3s linear;
+  transition: fill 0.3s linear;
+}
+
+.like-icon.is-liked .main-body {
+  fill: var(--main-body);
+  -webkit-transition: fill 0.3s linear;
+  transition: fill 0.3s linear;
+  -webkit-transition-delay: 0.05s;
+          transition-delay: 0.05s;
+}
+
+.like-icon.is-liked .heart {
+  -webkit-transform-origin: center;
+      -ms-transform-origin: center;
+          transform-origin: center;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  -webkit-animation-name: heart-scaling;
+          animation-name: heart-scaling;
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s;
+  -webkit-animation-duration: 0.3s;
+          animation-duration: 0.3s;
+  -webkit-animation-timing-function: ease-in;
+          animation-timing-function: ease-in;
+}
+
+.like-icon.is-liked .sparks {
+  -webkit-transform-origin: center;
+      -ms-transform-origin: center;
+          transform-origin: center;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  -webkit-animation-name: sparks-apearing;
+          animation-name: sparks-apearing;
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+  -webkit-animation-duration: 0.3s;
+          animation-duration: 0.3s;
+  -webkit-animation-timing-function: ease-in;
+          animation-timing-function: ease-in;
+}
+
+@-webkit-keyframes arrow-moving {
+  0% {
+    translate: none;
+  }
+
+  100% {
+    translate: 4px 0;
+  }
+}
+
+@keyframes arrow-moving {
+  0% {
+    translate: none;
+  }
+
+  100% {
+    translate: 4px 0;
+  }
+}
+
+@-webkit-keyframes heart-scaling {
+  0% {
+    scale: 1;
+  }
+
+  100% {
+    scale: 1.5;
+  }
+}
+
+@keyframes heart-scaling {
+  0% {
+    scale: 1;
+  }
+
+  100% {
+    scale: 1.5;
+  }
+}
+
+@-webkit-keyframes sparks-apearing {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes sparks-apearing {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+@charset "UTF-8";
+
+/* В этом файле вы импортируете все шрифты для сайта. Один из них вариативный и требует особенной настройки */
+
+@font-face {
+  font-family: "PressStart2P";
+  src: local("PressStart2P"), url("../fonts/PressStart2P-Regular.woff") format("woff");
+  font-display: swap;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: Inter-Variable;
+  src: local("Inter-Variable"), url("../fonts/Inter-Variable.woff2") format("woff2 supports variations"), url("../fonts/Inter-Variable.woff2") format("woff2-variations");
+  font-display: swap;
+  font-weight: 400 785;
+}
+@charset "UTF-8";
+
+/* В этом файле уже написаны некоторые базовые стили, которые сбрасывают или преобразуют дефольное браузерное поведение.
+Здесь же лежит утилитарный класс visually-hidden на случай, если нужно скрыть какой-то элемент, но оставить доступным для скринридера.
+Вы можете изменять этот файл или дополнять. Но скорее всего, вам это не потребуется. */
+
+*,
+*::after,
+*::before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+button {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+input {
+  color: currentcolor;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+button {
+  background-color: inherit;
+  border: none;
+}
+
+:focus,
+:focus-visible {
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+a,
+button {
+  cursor: pointer;
+}
+@charset "UTF-8";
+
+/* Здесь вы напишете основную часть стилей страницы.
+
+Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
+✦ theme-dark — класс тёмной темы
+✦ theme-light — класс светлой темы
+✦ like-icon — для svg-иконки анимированного сердца
+✦ card__like-button — для кнопки Like рядом с иконкой
+✦ card__icon-button — для кнопки, оборачивающей иконку
+✦ card__icon-button — для кнопки, оборачивающей иконку
+✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
+✦ button__text — для обозначения текстового элемента внутри кнопки
+
+Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
+
+*/
+
+/* Опишите в этом файле все keyframes для проекта и стили анимаций иконки Like.
+
+Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
+✦ theme-dark — класс тёмной темы
+✦ theme-light — класс светлой темы
+✦ like-icon — для svg-иконки анимированного сердца
+✦ card__like-button — для кнопки Like рядом с иконкой
+✦ card__icon-button — для кнопки, оборачивающей иконку
+✦ card__icon-button — для кнопки, оборачивающей иконку
+✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
+✦ button__text — для обозначения текстового элемента внутри кнопки
+
+Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
+*/
+
+.like-icon .contour {
+  -webkit-transform-origin: center;
+      -ms-transform-origin: center;
+          transform-origin: center;
+  fill: var(--contour-color);
+  -webkit-transition: fill 0.1s linear;
+  transition: fill 0.1s linear;
+}
+
+.like-icon .core {
+  -webkit-transform-origin: center;
+      -ms-transform-origin: center;
+          transform-origin: center;
+  fill: var(--theme-bc-color);
+  -webkit-transition: fill 0.3s linear;
+  transition: fill 0.3s linear;
+  -webkit-transition-delay: 0.03s;
+          transition-delay: 0.03s;
+}
+
+.like-icon:hover .core {
+  fill: var(--contour-color);
+}
+
+.like-icon:hover .main-body {
+  fill: var(--contour-color);
+  -webkit-transition-delay: 0.05s;
+          transition-delay: 0.05s;
+}
+
+.like-icon .main-body {
+  -webkit-transform-origin: center;
+      -ms-transform-origin: center;
+          transform-origin: center;
+  fill: var(--theme-bc-color);
+  -webkit-transition: fill 0.3s linear;
+  transition: fill 0.3s linear;
+}
+
+.like-icon:active .core {
+  fill: var(--main-body);
+  -webkit-transition: fill 0.3s linear;
+  transition: fill 0.3s linear;
+}
+
+.like-icon:active .main-body {
+  fill: var(--main-body);
+  -webkit-transition: fill 0.3s linear;
+  transition: fill 0.3s linear;
+  -webkit-transition-delay: 0.05s;
+          transition-delay: 0.05s;
+}
+
+.like-icon .sparks {
+  -webkit-transform-origin: center;
+      -ms-transform-origin: center;
+          transform-origin: center;
+  fill: var(--main-body);
+  opacity: 0;
+}
+
+.like-icon.is-liked .contour {
+  fill: var(--main-body);
+  -webkit-transition: fill 0.3s linear;
+  transition: fill 0.3s linear;
+  -webkit-transition-delay: 0.06s;
+          transition-delay: 0.06s;
+}
+
+.like-icon.is-liked .core {
+  fill: var(--main-body);
+  -webkit-transition: fill 0.3s linear;
+  transition: fill 0.3s linear;
+}
+
+.like-icon.is-liked .main-body {
+  fill: var(--main-body);
+  -webkit-transition: fill 0.3s linear;
+  transition: fill 0.3s linear;
+  -webkit-transition-delay: 0.05s;
+          transition-delay: 0.05s;
+}
+
+.like-icon.is-liked .heart {
+  -webkit-transform-origin: center;
+      -ms-transform-origin: center;
+          transform-origin: center;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  -webkit-animation-name: heart-scaling;
+          animation-name: heart-scaling;
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s;
+  -webkit-animation-duration: 0.3s;
+          animation-duration: 0.3s;
+  -webkit-animation-timing-function: ease-in;
+          animation-timing-function: ease-in;
+}
+
+.like-icon.is-liked .sparks {
+  -webkit-transform-origin: center;
+      -ms-transform-origin: center;
+          transform-origin: center;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  -webkit-animation-name: sparks-apearing;
+          animation-name: sparks-apearing;
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+  -webkit-animation-duration: 0.3s;
+          animation-duration: 0.3s;
+  -webkit-animation-timing-function: ease-in;
+          animation-timing-function: ease-in;
+}
+
+@keyframes arrow-moving {
+  0% {
+    translate: none;
+  }
+
+  100% {
+    translate: 4px 0;
+  }
+}
+
+@keyframes heart-scaling {
+  0% {
+    scale: 1;
+  }
+
+  100% {
+    scale: 1.5;
+  }
+}
+
+@keyframes sparks-apearing {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/* В этом файле уже написаны некоторые базовые стили, которые сбрасывают или преобразуют дефольное браузерное поведение.
+Здесь же лежит утилитарный класс visually-hidden на случай, если нужно скрыть какой-то элемент, но оставить доступным для скринридера.
+Вы можете изменять этот файл или дополнять. Но скорее всего, вам это не потребуется. */
+
+*,
+*::after,
+*::before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+button {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+input {
+  color: currentcolor;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+button {
+  background-color: inherit;
+  border: none;
+}
+
+:focus,
+:focus-visible {
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+/* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+
+:root {
+  --main-font: "Inter-Variable";
+  --accent-font: "PressStart2P";
+  --title-line-height: 21.78px;
+  --text-line-height: 21.78px;
+  --text-font-size: 18px;
+  --button-font-size: 14px;
+  --button-line-height: 12.6px;
+  --main-font-weight-400: 400;
+  --main-font-bold-weight-700: 700;
+  --main-font-weight-465: 465;
+  --main-font-bold-weight-785: 785;
+  --main-text-weight: var(--main-font-weight-400);
+  --title-text-weight: var(--main-font-bold-weight-700);
+  --ibal-v-rot-eto-ispravl-yat-svetlo-theme-bc-color: white;
+  --ibal-v-rot-eto-ispravl-yat-svetlo-theme-accent-color: black;
+  --ibal-v-rot-eto-ispravl-yat-svetlo-theme-accent-color-op-60: rgb(0 0 0 / 60%);
+  --ibal-v-rot-eto-ispravl-yat-temno-theme-bc-color: black;
+  --ibal-v-rot-eto-ispravl-yat-temno-theme-accent-color: #00cc14;
+  --ibal-v-rot-eto-ispravl-yat-temno-theme-accent-color-op-60: rgb(0 204 20 / 60%);
+  --theme-bc-color: var(--light-theme-bc-color, white);
+  --theme-accent-color: var(--light-theme-accent-color, black);
+  --theme-button-color: var(--ibal-v-rot-eto-ispravl-yat-svetlo-theme-bc-color);
+  --contour-color: var(--theme-accent-color);
+  --main-body: rgb(255 0 0 / 100%);
+  --color-beige: #d3d3d3;
+  --color-beige-op-0: #d3d3d300;
+  --color-dark: #000;
+  --color-dark-op-0: #0000;
+  --color-beige-light: #e7e7e7;
+  --color-dark-grey: #1a1a1a;
+  --color-toxic-green: #007f0c;
+  --color-dark-green: #004306;
+  --rep-gradient-to-bottom-light: repeating-linear-gradient(
+    to bottom,
+    var(--color-beige, #d3d3d3),
+    var(--color-beige, #d3d3d3) 2px,
+    var(--color-beige-op-0, #d3d3d300) 2px,
+    var(--color-beige-op-0, #d3d3d300) 4px
+  );
+  --rep-gradient-to-bottom-dark: repeating-linear-gradient(
+    to bottom,
+    var(--color-dark, #000),
+    var(--color-dark-op-0, #0000) 2px,
+    var(--color-beige-op-0, #d3d3d300) 2px,
+    var(--color-beige-op-0, #d3d3d300) 4px
+  );
+  --rep-gradient-to-right-light: repeating-linear-gradient(
+    to right,
+    var(--color-beige, #d3d3d3),
+    var(--color-beige, #d3d3d3) 2px,
+    var(--color-beige-op-0, #d3d3d300) 2px,
+    var(--color-beige-op-0, #d3d3d300) 4px
+  );
+  --rep-gradient-to-right-dark: repeating-linear-gradient(
+    to right,
+    var(--color-dark, #000),
+    var(--color-dark-op-0, #0000) 2px,
+    var(--color-beige-op-0, #d3d3d300) 2px,
+    var(--color-beige-op-0, #d3d3d300) 4px
+  );
+  --linear-gradient-light: linear-gradient(
+    to bottom,
+    var(--color-beige-light, #e7e7e7) 0.01%,
+    var(--color-dark-grey, #1a1a1a)
+  );
+  --linear-gradient-dark: linear-gradient(
+    to bottom,
+    var(--color-toxic-green, #007f0c),
+    var(--color-dark-green, #004306)
+  );
+  --gradient-background-light-theme: var(--rep-gradient-to-bottom-light),
+    var(--rep-gradient-to-right-light), var(--linear-gradient-light);
+  --gradient-background-dark-theme: var(--rep-gradient-to-bottom-dark),
+    var(--rep-gradient-to-right-dark), var(--linear-gradient-dark);
+  --bg-image-gradient: var(--gradient-background-light-theme);
+  --desktop-container-width: clamp(23.438rem, 0.223rem + 48.363vw, 43.75rem);
+  --mobile-container-width: 100%;
+}
+
+/* В этом файле вы опишете значения переменных в разных цветовых схемах.
+Придерживайтесь такого именования классов:
+✦ theme-dark — класс тёмной темы
+✦ theme-light — класс светлой темы
+✦ не забудьте описать стили для изменения темы через медизапрос пользовательских предпочтений
+*/
+
+:root.theme-light {
+  --main-text-weight: var(--main-font-weight-400);
+  --title-text-weight: var(--main-font-bold-weight-700);
+  --theme-bc-color: var(--light-theme-bc-color, white);
+  --theme-accent-color: var(--light-theme-accent-color, black);
+  --theme-button-color: var(--ibal-v-rot-eto-ispravl-yat-svetlo-theme-bc-color);
+  --bg-image-gradient: var(--gradient-background-light-theme);
+  --button-disabled-color: var(
+    --light-theme-accent-color-op-60,
+    rgb(0 0 0 / 60%)
+  );
+}
+
+:root.theme-dark {
+  --main-text-weight: var(--main-font-weight-465);
+  --title-text-weight: var(--main-font-bold-weight-785);
+  --theme-bc-color: var(--dark-theme-bc-color, black);
+  --theme-accent-color: var(--dark-theme-accent-color, #00cc14);
+  --theme-button-color: var(--ibal-v-rot-eto-ispravl-yat-temno-theme-accent-color);
+  --bg-image-gradient: var(--gradient-background-dark-theme);
+  --button-disabled-color: var(
+    --dark-theme-accent-color-op-60,
+    rgb(0 204 20 / 60%)
+  );
+}
+
+/* В этом файле вы импортируете все шрифты для сайта. Один из них вариативный и требует особенной настройки */
+
+@font-face {
+  font-family: "PressStart2P";
+  src: local("PressStart2P"), url("../fonts/PressStart2P-Regular.woff") format("woff");
+  font-display: swap;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: Inter-Variable;
+  src: local("Inter-Variable"), url("../fonts/Inter-Variable.woff2") format("woff2 supports variations"), url("../fonts/Inter-Variable.woff2") format("woff2-variations");
+  font-display: swap;
+  font-weight: 400 785;
+}
+
+.page {
+  min-inline-size: 320px;
+  min-block-size: 100dvb;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: var(--main-font), sans-serif;
+  font-variation-settings: "wght" var(--main-text-weight);
+  color: var(--theme-accent-color);
+  background: var(--bg-image-gradient), var(--theme-bc-color);
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: var(--desktop-container-width);
+  background-color: var(--theme-bc-color);
+  border: 2px solid var(--theme-accent-color);
+}
+
+.header {
+  margin: 100px auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 25px;
+  padding: clamp(7.5rem, 7.148rem + 1.502vw, 8.5rem) 0 25px;
+  font-family: var(--accent-font), sans-serif;
+  font-weight: var(--main-font-weight-400);
+}
+
+.header__title {
+  font-size: clamp(0.875rem, 0.677rem + 0.845vw, 1.438rem);
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.header__title-logo {
+  display: block;
+  font-size: clamp(3.063rem, 1.92rem + 2.381vw, 4.063rem);
+}
+
+.theme-menu__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-size: 14px;
+  gap: 14px;
+  padding-left: 20px;
+}
+
+.theme-menu__button:disabled::before {
+  position: absolute;
+  color: var(--button-disabled-color);
+  content: "▶";
+  left: -20px;
+  top: 0;
+  -webkit-animation-name: arrow-moving;
+          animation-name: arrow-moving;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+}
+
+.theme-menu__button {
+  position: relative;
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+  text-transform: uppercase;
+}
+
+.theme-menu__button:hover,
+.theme-menu__button:focus {
+  color: var(--button-disabled-color);
+}
+
+.theme-menu__button:disabled {
+  color: var(--button-disabled-color);
+  pointer-events: none;
+}
+
+.theme-menu__button::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  display: block;
+  height: 2px;
+  background-color: var(--button-disabled-color);
+  width: 100%;
+  -webkit-transform: scaleX(0);
+      -ms-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+  -webkit-transform-origin: left;
+      -ms-transform-origin: left;
+          transform-origin: left;
+}
+
+.theme-menu__button:focus-visible::after {
+  -webkit-transform: scaleX(1);
+      -ms-transform: scaleX(1);
+          transform: scaleX(1);
+  -webkit-transform-origin: left;
+      -ms-transform-origin: left;
+          transform-origin: left;
+}
+
+.cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 50px;
+  font-family: var(--main-font), Arial, sans-serif;
+}
+
+.cards .card .card__title {
+  font-family: inherit;
+  font-variation-settings: "wght" var(--title-text-weight) "slnt" 0;
+  font-size: var(--text-font-size);
+  line-height: var(--title-line-height);
+  padding: 3px 24px 3px 10px;
+}
+
+.cards .card .card__image-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.cards .card .card__image {
+  width: inherit;
+  outline: 2px solid var(--theme-accent-color);
+}
+
+.cards .card .card__image-wrapper-text {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  font-weight: var(--main-font-weight-400);
+  font-family: var(--accent-font), Arial, sans-serif;
+  font-size: 14px;
+  line-height: 14px;
+  color: var(--theme-accent-color);
+  mix-blend-mode: hard-light;
+  text-shadow: 1px var(--theme-bc-color);
+  opacity: 0.5;
+}
+
+@supports (text-stroke: 1px var(--theme-bc-color)) or (-webkit-text-stroke: 1px var(--theme-bc-color)) {
+  .cards .card .card__image-wrapper-text {
+    -webkit-text-stroke: 1px var(--theme-bc-color);
+    text-stroke: 1px var(--theme-bc-color);
+    text-shadow: none;
+  }
+}
+
+.cards .card .card__content {
+  margin: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 27px;
+  font-family: inherit;
+  font-variation-settings: "wght" var(--main-text-weight) "slnt" 0;
+  font-size: var(--text-font-size);
+  line-height: var(--text-line-height);
+}
+
+.cards .card .card__button-group {
+  margin: 0 25px 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  gap: 12px;
+}
+
+.cards .card .card__like-button {
+  padding: 9px 17px;
+  min-inline-size: 169px;
+}
+
+.cards .card .card__icon-like {
+  border: 2px solid var(--theme-bc-color);
+  -webkit-transition: border 0.3s ease;
+  transition: border 0.3s ease;
+}
+
+.cards .card .card__icon-like:focus-visible {
+  border: 2px solid var(--theme-accent-color);
+}
+
+.standard-button {
+  position: relative;
+  font-family: var(--accent-font), sans-serif;
+  border: 2px solid var(--theme-accent-color);
+  font-size: var(--button-font-size);
+  line-height: var(--button-line-height);
+  font-weight: var(--main-font-weight-400);
+  -webkit-transition: -webkit-box-shadow 0.3s ease;
+  transition: -webkit-box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease, -webkit-box-shadow 0.3s ease;
+  color: var(--theme-accent-color);
+}
+
+.standard-button:focus {
+  -webkit-box-shadow: 2px 2px var(--theme-accent-color);
+          box-shadow: 2px 2px var(--theme-accent-color);
+}
+
+.standard-button::before {
+  top: 0;
+  left: 0;
+  content: "";
+  display: block;
+  position: absolute;
+  height: 100%;
+  background-color: var(--theme-accent-color);
+  width: 100%;
+  -webkit-transform: scaleX(0);
+      -ms-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  transition: -webkit-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+  -webkit-transform-origin: left;
+      -ms-transform-origin: left;
+          transform-origin: left;
+  z-index: 1;
+}
+
+.standard-button:hover::before {
+  -webkit-transform: scaleX(1);
+      -ms-transform: scaleX(1);
+          transform: scaleX(1);
+  -webkit-transform-origin: left;
+      -ms-transform-origin: left;
+          transform-origin: left;
+  z-index: 1;
+}
+
+.standard-button .button__text {
+  position: relative;
+  display: block;
+  z-index: 2;
+  color: var(--theme-button-color);
+  mix-blend-mode: difference;
+}
+
+.standard-button .footer__save-button__icon {
+  position: relative;
+  z-index: 2;
+  color: var(--theme-button-color);
+  mix-blend-mode: difference;
+}
+
+.footer__save-button {
+  inline-size: 335px;
+  height: 55px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 8px;
+}
+
+.footer {
+  margin: 52px auto 105px;
+  background-color: var(--theme-bc-color);
+}
+
+.footer__save-button__icon {
+  width: 21px;
+  height: 21px;
+}
+
+.dialog {
+  padding: 30px;
+  width: 353px;
+  background-color: var(--theme-bc-color);
+  color: var(--theme-accent-color);
+  font-family: var(--accent-font), Arial, sans-serif;
+  line-height: 21px;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.dialog[open] {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.dialog::-ms-backdrop {
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.close-button {
+  padding: 12.5px 132.5px;
+}
+
+.dialog__floopy__icon {
+  display: block;
+  width: 39px;
+  height: 39px;
+}
+
+.brightness {
+  -webkit-filter: brightness(200%);
+          filter: brightness(200%);
+}
+
+.contrast {
+  -webkit-filter: contrast(20%);
+          filter: contrast(20%);
+}
+
+.blur {
+  -webkit-filter: blur(3.2rem);
+          filter: blur(3.2rem);
+}
+
+.opacity {
+  -webkit-filter: opacity(0.8);
+          filter: opacity(0.8);
+}
+
+.grayscale {
+  -webkit-filter: grayscale(0.8);
+          filter: grayscale(0.8);
+}
+
+.saturate {
+  -webkit-filter: saturate(158%);
+          filter: saturate(158%);
+}
+
+.multiple {
+  -webkit-filter: saturate(158%) opacity(0.8) grayscale(0.8);
+          filter: saturate(158%) opacity(0.8) grayscale(0.8);
+}
+
+.invert {
+  -webkit-filter: invert(0.7);
+          filter: invert(0.7);
+}
+@charset "UTF-8";
+
+/* В этом файле вы опишете значения переменных в разных цветовых схемах.
+Придерживайтесь такого именования классов:
+✦ theme-dark — класс тёмной темы
+✦ theme-light — класс светлой темы
+✦ не забудьте описать стили для изменения темы через медизапрос пользовательских предпочтений
+*/
+
+:root.theme-light {
+  --main-text-weight: var(--main-font-weight-400);
+  --title-text-weight: var(--main-font-bold-weight-700);
+  --theme-bc-color: var(--light-theme-bc-color, white);
+  --theme-accent-color: var(--light-theme-accent-color, black);
+  --theme-button-color: var(--ibal-v-rot-eto-ispravl-yat-svetlo-theme-bc-color);
+  --bg-image-gradient: var(--gradient-background-light-theme);
+  --button-disabled-color: var(
+    --light-theme-accent-color-op-60,
+    rgb(0 0 0 / 60%)
+  );
+}
+
+:root.theme-dark {
+  --main-text-weight: var(--main-font-weight-465);
+  --title-text-weight: var(--main-font-bold-weight-785);
+  --theme-bc-color: var(--dark-theme-bc-color, black);
+  --theme-accent-color: var(--dark-theme-accent-color, #00cc14);
+  --theme-button-color: var(--ibal-v-rot-eto-ispravl-yat-temno-theme-accent-color);
+  --bg-image-gradient: var(--gradient-background-dark-theme);
+  --button-disabled-color: var(
+    --dark-theme-accent-color-op-60,
+    rgb(0 204 20 / 60%)
+  );
+}
+@charset "UTF-8";
+
+/* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+
+:root {
+  --main-font: "Inter-Variable";
+  --accent-font: "PressStart2P";
+  --title-line-height: 21.78px;
+  --text-line-height: 21.78px;
+  --text-font-size: 18px;
+  --button-font-size: 14px;
+  --button-line-height: 12.6px;
+  --main-font-weight-400: 400;
+  --main-font-bold-weight-700: 700;
+  --main-font-weight-465: 465;
+  --main-font-bold-weight-785: 785;
+  --main-text-weight: var(--main-font-weight-400);
+  --title-text-weight: var(--main-font-bold-weight-700);
+  --ibal-v-rot-eto-ispravl-yat-svetlo-theme-bc-color: white;
+  --ibal-v-rot-eto-ispravl-yat-svetlo-theme-accent-color: black;
+  --ibal-v-rot-eto-ispravl-yat-svetlo-theme-accent-color-op-60: rgb(0 0 0 / 60%);
+  --ibal-v-rot-eto-ispravl-yat-temno-theme-bc-color: black;
+  --ibal-v-rot-eto-ispravl-yat-temno-theme-accent-color: #00cc14;
+  --ibal-v-rot-eto-ispravl-yat-temno-theme-accent-color-op-60: rgb(0 204 20 / 60%);
+  --theme-bc-color: var(--light-theme-bc-color, white);
+  --theme-accent-color: var(--light-theme-accent-color, black);
+  --theme-button-color: var(--ibal-v-rot-eto-ispravl-yat-svetlo-theme-bc-color);
+  --contour-color: var(--theme-accent-color);
+  --main-body: rgb(255 0 0 / 100%);
+  --color-beige: #d3d3d3;
+  --color-beige-op-0: #d3d3d300;
+  --color-dark: #000;
+  --color-dark-op-0: #0000;
+  --color-beige-light: #e7e7e7;
+  --color-dark-grey: #1a1a1a;
+  --color-toxic-green: #007f0c;
+  --color-dark-green: #004306;
+  --rep-gradient-to-bottom-light: repeating-linear-gradient(
+    to bottom,
+    var(--color-beige, #d3d3d3),
+    var(--color-beige, #d3d3d3) 2px,
+    var(--color-beige-op-0, #d3d3d300) 2px,
+    var(--color-beige-op-0, #d3d3d300) 4px
+  );
+  --rep-gradient-to-bottom-dark: repeating-linear-gradient(
+    to bottom,
+    var(--color-dark, #000),
+    var(--color-dark-op-0, #0000) 2px,
+    var(--color-beige-op-0, #d3d3d300) 2px,
+    var(--color-beige-op-0, #d3d3d300) 4px
+  );
+  --rep-gradient-to-right-light: repeating-linear-gradient(
+    to right,
+    var(--color-beige, #d3d3d3),
+    var(--color-beige, #d3d3d3) 2px,
+    var(--color-beige-op-0, #d3d3d300) 2px,
+    var(--color-beige-op-0, #d3d3d300) 4px
+  );
+  --rep-gradient-to-right-dark: repeating-linear-gradient(
+    to right,
+    var(--color-dark, #000),
+    var(--color-dark-op-0, #0000) 2px,
+    var(--color-beige-op-0, #d3d3d300) 2px,
+    var(--color-beige-op-0, #d3d3d300) 4px
+  );
+  --linear-gradient-light: linear-gradient(
+    to bottom,
+    var(--color-beige-light, #e7e7e7) 0.01%,
+    var(--color-dark-grey, #1a1a1a)
+  );
+  --linear-gradient-dark: linear-gradient(
+    to bottom,
+    var(--color-toxic-green, #007f0c),
+    var(--color-dark-green, #004306)
+  );
+  --gradient-background-light-theme: var(--rep-gradient-to-bottom-light),
+    var(--rep-gradient-to-right-light), var(--linear-gradient-light);
+  --gradient-background-dark-theme: var(--rep-gradient-to-bottom-dark),
+    var(--rep-gradient-to-right-dark), var(--linear-gradient-dark);
+  --bg-image-gradient: var(--gradient-background-light-theme);
+  --desktop-container-width: clamp(23.438rem, 0.223rem + 48.363vw, 43.75rem);
+  --mobile-container-width: 100%;
+}
+
+@media (prefers-color-scheme: light){
+  :root {
+    --main-text-weight: var(--main-font-weight-400);
+    --title-text-weight: var(--main-font-bold-weight-700);
+    --theme-bc-color: var(--light-theme-bc-color, white);
+    --theme-accent-color: var(--light-theme-accent-color, black);
+    --theme-button-color: var(--ibal-v-rot-eto-ispravl-yat-svetlo-theme-bc-color);
+    --bg-image-gradient: var(--gradient-background-light-theme);
+    --button-disabled-color: var(
+      --light-theme-accent-color-op-60,
+      rgb(0 0 0 / 60%)
+    );
+  }
+  :root {
+    --main-text-weight: var(--main-font-weight-400);
+    --title-text-weight: var(--main-font-bold-weight-700);
+    --theme-bc-color: var(--light-theme-bc-color, white);
+    --theme-accent-color: var(--light-theme-accent-color, black);
+    --theme-button-color: var(--ibal-v-rot-eto-ispravl-yat-svetlo-theme-bc-color);
+    --bg-image-gradient: var(--gradient-background-light-theme);
+    --button-disabled-color: var(
+      --light-theme-accent-color-op-60,
+      rgb(0 0 0 / 60%)
+    );
+  }
+}
+
+@media (prefers-color-scheme: dark){
+  :root {
+    --main-text-weight: var(--main-font-weight-465);
+    --title-text-weight: var(--main-font-bold-weight-785);
+    --theme-bc-color: var(--dark-theme-bc-color, black);
+    --theme-accent-color: var(--dark-theme-accent-color, #00cc14);
+    --theme-button-color: var(--ibal-v-rot-eto-ispravl-yat-temno-theme-accent-color);
+    --bg-image-gradient: var(--gradient-background-dark-theme);
+    --button-disabled-color: var(
+      --dark-theme-accent-color-op-60,
+      rgb(0 204 20 / 60%)
+    );
+  }
+  :root {
+    --main-text-weight: var(--main-font-weight-465);
+    --title-text-weight: var(--main-font-bold-weight-785);
+    --theme-bc-color: var(--dark-theme-bc-color, black);
+    --theme-accent-color: var(--dark-theme-accent-color, #00cc14);
+    --theme-button-color: var(--ibal-v-rot-eto-ispravl-yat-temno-theme-accent-color);
+    --bg-image-gradient: var(--gradient-background-dark-theme);
+    --button-disabled-color: var(
+      --dark-theme-accent-color-op-60,
+      rgb(0 204 20 / 60%)
+    );
+  }
+}
+
+@media (width <= 375px){
+  .container {
+    width: var(--mobile-container-width);
+  }
+  .cards .card .card__title {
+    padding: 3.5px 10px 5.5px;
+  }
+}

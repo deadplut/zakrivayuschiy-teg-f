@@ -329,32 +329,32 @@
 
 // filters
 
-//.brightness {
-//  filter: brightness(200%);
-//}
-//
-//.contrast {
-//  filter: contrast(20%);
-//}
-//
-//.blur {
-//  filter: blur(3.2rem);
-//}
-//
-//.opacity {
-//  filter: opacity(0.8);
-//}
-//
-//.grayscale {
-//  filter: grayscale(0.8);
-//}
-//.saturate {
-//  filter: saturate(158%);
-//}
-//.multiple {
-//  filter: saturate(158%) opacity(0.8) grayscale(0.8);
-//}
-//
-//.invert {
-//  filter: invert(0.7);
-//}
+.brightness {
+  filter: brightness(200%);
+}
+
+.contrast {
+  filter: contrast(20%);
+}
+
+.blur {
+  filter: blur(3.2rem);
+}
+
+.opacity {
+  filter: opacity(0.8);
+}
+
+.grayscale {
+  filter: grayscale(0.8);
+}
+.saturate {
+  filter: saturate(158%);
+}
+.multiple {
+  filter: saturate(158%) opacity(0.8) grayscale(0.8);
+}
+
+.invert {
+  filter: invert(0.7);
+}
